@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "~/.brew/include",
+                "~/.brew/include/gtk-4.0",
+                "~/.brew/include/cairo",
+                "~/.brew/include/pango-1.0",
+                "~/.brew/include/harfbuzz",
+                "~/.brew/include/gdk-pixbuf-2.0",
+                "~/.brew/include/atk-1.0",
+                "~/.brew/include/graphene-1.0",
+                "~/.brew/include/glib-2.0",
+                "~/.brew/Cellar/glib/2.70.2/lib/glib-2.0/include",
+                "~/.brew/Cellar/glib/2.70.2/include/gio-unix-2.0",
+                "~/.brew/Cellar/glib/2.70.2/include",
+                "~/.brew/Cellar/glib/2.70.2/include/glib-2.0",
+                "~/.brew/Cellar/graphene/1.10.6/include/graphene-1.0",
+                "~/.brew/Cellar/graphene/1.10.6/lib/graphene-1.0/include"
+            ],
+            "defines": [],
+            "macFrameworkPath": [],
+            "compilerPath": "/usr/local/bin/gcc-11",
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "macos-gcc-x64"
+        }
+    ],
+    "version": 4
+}

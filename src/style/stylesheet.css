@@ -1,0 +1,151 @@
+window {
+    background-image: none;
+    background-color: #202124;
+    padding: 5px;
+    font: 14px Roboto, system-ui, sans-serif;
+    color: #e8eaed;
+}
+
+button, spinbutton {
+    background-image: none;
+    background-color: #292A2D;
+    border-radius: 4px;
+    border: solid 1px #606367;
+    transition: background-color 0.2s;
+    font-weight: 500;
+    color: #8ab4f8;
+}
+
+button:hover {
+    background-color: #8ab4f814;
+}
+
+button:active {
+    background-color: #4c5362;
+}
+
+button.special {
+    background-color: #94B4F2;
+    border: none;
+    transition: background-color 0.2s;
+    font-weight: 500;
+    color: #202124;
+}
+
+button.special:hover {
+    background-color: #8ab4f8;
+}
+
+button.special:active {
+    background-color: #728abb;
+}
+
+text, textview {
+    border-radius: 4px;
+    background-image: none;
+    background-color: #202124;
+    font-family: 'Monaco', monospace;
+    font-size: 14px;
+    padding-left: 4px;
+}
+
+.settings {
+    padding: 5px;
+    border-radius: 4px;
+    background-color: #292A2D;
+}
+
+.section, .section_last {
+    padding-bottom: 20px;
+    border-bottom: solid 1px #606367;
+    margin-bottom: 10px;
+}
+
+.section_last {
+    border: none;
+}
+
+:focus, :focus-within {
+    outline: none;
+}
+
+contents {
+    background-image: none;
+    background-color: #292A2D;
+    border-radius: 4px;
+    padding: 0;
+    margin: 2px 0 0 0;
+    border: solid 1px #606367;
+    font: 14px Roboto, system-ui, sans-serif;
+}
+
+modelbutton {
+    background-color: #292A2D;
+    color: #e8eaed;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+modelbutton:selected, modelbutton:hover {
+    background-color: #31353D;
+    color: #8ab4f8;
+}
+
+entry.combo {
+    border: none;
+    padding: 0;
+    margin: 0;
+    background-image: none;
+    background-color: #292A2D;
+    outline: none;
+    color: #e8eaed;
+}
+
+.dialog-vbox .title {
+    font: bold 16px Roboto, system-ui, sans-serif;
+    letter-spacing: .1em;
+}
+
+.btn_settings, .btn_screenshot, .btn_record {
+    padding: 5px 9px;
+    border-radius: 20px;
+}
+
+.btn_settings {
+    background: no-repeat url("images/shaft.png");
+    background-position: 50% 50%;
+    background-size: 20px;
+}
+
+.btn_screenshot {
+    background: no-repeat url("images/panorama.png");
+    background-position: 50% 50%;
+    background-size: 20px;
+}
+
+.btn_record {
+    margin-left: 40px;
+    background: no-repeat url("images/record.png");
+    background-position: 50% 50%;
+    background-size: 20px;
+}
+
+.header {
+    font: 14px Roboto, system-ui, sans-serif;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+spinbutton {
+    margin-left: 10px;
+    padding: 0;
+    border: none;
+}
+
+spinbutton text {
+    border: solid 1px #606367;
+}
+
+button.down, button.up {
+    margin-left: 5px;
+    padding: 0 12px;
+}

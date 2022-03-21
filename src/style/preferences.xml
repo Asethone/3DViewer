@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkAdjustment" id="adjustment1">
+    <property name="upper">5</property>
+    <property name="lower">1</property>
+    <property name="value">1</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">2</property>
+  </object>
+  <object class="GtkAdjustment" id="adjustment2">
+    <property name="upper">5</property>
+    <property name="lower">1</property>
+    <property name="value">1</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
+  <object class="GtkWindow" id="window">
+    <property name="title">Preferences</property>
+    <property name="default-width">400</property>
+    <property name="default-height">500</property>
+    <property name="resizable">0</property>
+    <property name="modal">1</property>
+    <child>
+      <object class="GtkBox" id="vbox">
+        <property name="orientation">vertical</property>
+        <property name="spacing">5</property>
+        <style>
+          <class name="settings" />
+        </style>
+        <child>
+          <object class="GtkBox" id="vbox_edges">
+            <property name="orientation">vertical</property>
+            <property name="spacing">5</property>
+            <style>
+              <class name="section" />
+            </style>
+            <child>
+              <object class="GtkLabel" id="label_edges">
+                <property name="label">EDGES</property>
+								<style>
+									<class name="header" />
+								</style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkGrid" id="grid_edges">
+                <property name="row-spacing">5</property>
+                <property name="column-spacing">5</property>
+                <property name="row_homogeneous">True</property>
+                <property name="column_homogeneous">True</property>
+                <child>
+                  <object class="GtkLabel" id="label_edges_color">
+                    <property name="label">Edges color</property>
+                    <property name="xalign">0</property>
+                    <property name="width-request">100</property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">0</property>
+                      <property name="row-span">1</property>
+                      <property name="column-span">1</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkComboBoxText" id="cb_edges_color">
+                    <property name="halign">start</property>
+                    <property name="margin-start">10</property>
+                    <items>
+                      <item translatable="yes" id="edges_white">white</item>
+                      <item translatable="yes" id="edges_cyan">cyan</item>
+                      <item translatable="yes" id="edges_golden">golden</item>
+                    </items>
+                    <property name="active-id">edges_white</property>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="row">0</property>
+                      <property name="row-span">1</property>
+                      <property name="column-span">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label_edges_thickness">
+                    <property name="label">Thickness</property>
+                    <property name="xalign">0</property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">1</property>
+                      <property name="row-span">1</property>
+                      <property name="column-span">1</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkSpinButton" id="sb_edges_thickness">
+                    <property name="adjustment">adjustment1</property>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="row">1</property>
+                      <property name="row-span">1</property>
+                      <property name="column-span">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label_edges_type">
+                    <property name="label">Type</property>
+                    <property name="xalign">0</property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">2</property>
+                      <property name="row-span">1</property>
+                      <property name="column-span">1</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkComboBoxText" id="cb_edges_type">
+                    <property name="halign">start</property>
+                    <property name="margin-start">10</property>
+                    <items>
+                      <item translatable="yes" id="edges_solid">solid</item>
+                      <item translatable="yes" id="edges_dashed">dashed</item>
+                    </items>
+                    <property name="active-id">edges_solid</property>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="row">2</property>
+                      <property name="row-span">1</property>
+                      <property name="column-span">2</property>
+                    </layout>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="vbox_vertices">
+            <property name="orientation">vertical</property>
+            <property name="spacing">5</property>
+            <style>
+              <class name="section" />
+            </style>
+            <child>
+              <object class="GtkLabel" id="label_vertices">
+                <property name="label">VERTICES</property>
+								<style>
+									<class name="header" />
+								</style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkGrid" id="grid_vertices">
+                <property name="row-spacing">5</property>
+                <property name="column-spacing">5</property>
+                <property name="row_homogeneous">True</property>
+                <property name="column_homogeneous">True</property>
+                <child>
+                  <object class="GtkLabel" id="label_vertices_color">
+                    <property name="label">Vertices color</property>
+                    <property name="xalign">0</property>
+                    <property name="width-request">100</property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">0</property>
+                      <property name="row-span">1</property>
+                      <property name="column-span">1</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkComboBoxText" id="cb_vertices_color">
+                    <property name="halign">start</property>
+                    <property name="margin-start">10</property>
+                    <items>
+                      <item translatable="yes" id="vertices_white">white</item>
+                      <item translatable="yes" id="vertices_cyan">cyan</item>
+                      <item translatable="yes" id="vertices_golden">golden</item>
+                    </items>
+                    <property name="active-id">vertices_white</property>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="row">0</property>
+                      <property name="row-span">1</property>
+                      <property name="column-span">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label_vertices_size">
+                    <property name="label">Size</property>
+                    <property name="xalign">0</property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">1</property>
+                      <property name="row-span">1</property>
+                      <property name="column-span">1</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkSpinButton" id="sb_vertices_size">
+                    <property name="adjustment">adjustment2</property>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="row">1</property>
+                      <property name="row-span">1</property>
+                      <property name="column-span">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label_vertices_type">
+                    <property name="label">Shape</property>
+                    <property name="xalign">0</property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">2</property>
+                      <property name="row-span">1</property>
+                      <property name="column-span">1</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkComboBoxText" id="cb_vertices_type">
+                    <property name="halign">start</property>
+                    <property name="margin-start">10</property>
+                    <items>
+                      <item translatable="yes" id="vertices_solid">none</item>
+                      <item translatable="yes" id="vertices_circle">circle</item>
+                      <item translatable="yes" id="vertices_square">square</item>
+                    </items>
+                    <property name="active-id">vertices_solid</property>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="row">2</property>
+                      <property name="row-span">1</property>
+                      <property name="column-span">2</property>
+                    </layout>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="vbox_other">
+            <property name="orientation">vertical</property>
+            <property name="spacing">5</property>
+            <style>
+              <class name="section_last" />
+            </style>
+            <child>
+              <object class="GtkLabel" id="label_other">
+                <property name="label">OTHER</property>
+								<style>
+									<class name="header" />
+								</style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkGrid" id="grid_other">
+                <property name="row-spacing">5</property>
+                <property name="column-spacing">5</property>
+                <property name="row_homogeneous">True</property>
+                <property name="column_homogeneous">True</property>
+                <child>
+                  <object class="GtkLabel" id="label_other_projection">
+                    <property name="label">Projection type</property>
+                    <property name="xalign">0</property>
+                    <property name="width-request">100</property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">0</property>
+                      <property name="row-span">1</property>
+                      <property name="column-span">1</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkComboBoxText" id="cb_other_projection">
+                    <property name="halign">start</property>
+                    <property name="margin-start">10</property>
+                    <items>
+                      <item translatable="yes" id="other_projection_parallel">parallel</item>
+                      <item translatable="yes" id="other_projection_central">central</item>
+                    </items>
+                    <property name="active-id">other_projection_parallel</property>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="row">0</property>
+                      <property name="row-span">1</property>
+                      <property name="column-span">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label_other_color">
+                    <property name="label">Background color</property>
+                    <property name="xalign">0</property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">1</property>
+                      <property name="row-span">1</property>
+                      <property name="column-span">1</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkComboBoxText" id="cb_other_color">
+                    <property name="halign">start</property>
+                    <property name="margin-start">10</property>
+                    <items>
+                      <item translatable="yes" id="other_default">dark grey</item>
+                      <item translatable="yes" id="other_grey">light grey</item>
+                      <item translatable="yes" id="other_blue">blue</item>
+                    </items>
+                    <property name="active-id">other_default</property>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="row">1</property>
+                      <property name="row-span">1</property>
+                      <property name="column-span">2</property>
+                    </layout>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="vbox_option">
+            <property name="orientation">vertical</property>
+            <property name="spacing">5</property>
+            <child>
+              <object class="GtkGrid" id="grid_option">
+                <property name="row-spacing">5</property>
+                <property name="column-spacing">5</property>
+                <property name="row_homogeneous">True</property>
+                <property name="column_homogeneous">True</property>
+                <child>
+                  <object class="GtkButton" id="Button_Default">
+                    <property name="label">Reset to default</property>
+                    <signal name="clicked" handler="setPreferencesDefault"/>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">0</property>
+                      <property name="row-span">1</property>
+                      <property name="column-span">2</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="Button_Cancel">
+                    <property name="label">Cancel</property>
+                    <signal name="clicked" handler="closePreferences"/>
+                    <layout>
+                      <property name="column">3</property>
+                      <property name="row">0</property>
+                      <property name="row-span">1</property>
+                      <property name="column-span">1</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="Button_Apply">
+                    <property name="label">Apply</property>
+                    <signal name="clicked" handler="savePreferences"/>
+                    <style>
+                      <class name="special" />
+                    </style>
+                    <layout>
+                      <property name="column">4</property>
+                      <property name="row">0</property>
+                      <property name="row-span">1</property>
+                      <property name="column-span">1</property>
+                    </layout>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

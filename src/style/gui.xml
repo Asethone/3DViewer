@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkWindow" id="window">
+    <property name="title">3DViewer</property>
+    <property name="default-width">1200</property>
+    <property name="default-height">650</property>
+    <property name="resizable">0</property>
+    <child>
+      <object class="GtkBox" id="hbox">
+        <property name="orientation">horizontal</property>
+        <property name="spacing">5</property>
+        <child>
+          <object class="GtkBox" id="vbox">
+            <property name="width-request">300</property>
+            <property name="orientation">vertical</property>
+            <property name="spacing">5</property>
+            <style>
+              <class name="settings"/>
+            </style>
+            <child>
+              <object class="GtkBox" id="vbox_model">
+                <property name="orientation">vertical</property>
+                <property name="spacing">5</property>
+                <style>
+                  <class name="section"/>
+                </style>
+                <child>
+                  <object class="GtkLabel" id="label_model_area">
+                    <property name="label">Model</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkComboBoxText" id="hbox_file_choose">
+                    <property name="has-entry">TRUE</property>
+                    <property name="halign">GTK_ALIGN_START</property>
+                    <property name="width-request">300</property>
+                    <items>
+<item translatable="yes" id="obj_al">models/al.obj</item>
+<item translatable="yes" id="obj_cow">models/cow.obj</item>
+<item translatable="yes" id="obj_cube">models/cube.obj</item>
+<item translatable="yes" id="obj_lamp">models/lamp.obj</item>
+<item translatable="yes" id="obj_magnolia">models/magnolia.obj</item>
+<item translatable="yes" id="obj_one_million">models/one_million.obj</item>
+<item translatable="yes" id="obj_pumpkin">models/pumpkin.obj</item>
+<item translatable="yes" id="obj_slot-machine">models/slot-machine.obj</item>
+<item translatable="yes" id="obj_teapot">models/teapot.obj</item>
+<item translatable="yes" id="obj_teddy">models/teddy.obj</item>
+<item translatable="yes" id="obj_trumpet">models/trumpet.obj</item>
+                        </items>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="btn_file_choose">
+                    <property name="label">Choose file</property>
+                    <style>
+                      <class name="special"/>
+                    </style>
+                    <signal name="clicked" handler="pressChooseFile" object="hbox_file_choose"/>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox" id="vbox_translate">
+                <property name="orientation">vertical</property>
+                <property name="spacing">5</property>
+                <style>
+                  <class name="section"/>
+                </style>
+                <child>
+                  <object class="GtkLabel" id="label_model_translate">
+                    <property name="label">Translate</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkGrid" id="grid_translate">
+                    <property name="row-spacing">5</property>
+                    <property name="column-spacing">5</property>
+                    <child>
+                      <object class="GtkLabel" id="label_x_translate">
+                        <property name="label">X</property>
+                        <layout>
+                          <property name="column">0</property>
+                          <property name="row">0</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkEntryBuffer" id="eb_x_translate"></object>
+                      <object class="GtkText" id="text_x_translate">
+                        <property name="buffer">eb_x_translate</property>
+                        <property name="max-length">10</property>
+                        <property name="hexpand">1</property>
+                        <layout>
+                          <property name="column">1</property>
+                          <property name="row">0</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_minus_x_translate">
+                        <property name="label">–</property>
+                        <signal name="clicked" handler="pressMinus" object="text_x_translate"/>
+                        <layout>
+                          <property name="column">2</property>
+                          <property name="row">0</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_plus_x_translate">
+                        <property name="label">+</property>
+                        <signal name="clicked" handler="pressPlus" object="text_x_translate"/>
+                        <layout>
+                          <property name="column">3</property>
+                          <property name="row">0</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label_y_translate">
+                        <property name="label">Y</property>
+                        <layout>
+                          <property name="column">0</property>
+                          <property name="row">1</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkEntryBuffer" id="eb_y_translate"></object>
+                      <object class="GtkText" id="text_y_translate">
+                        <property name="buffer">eb_y_translate</property>
+                        <property name="max-length">10</property>
+                        <property name="hexpand">1</property>
+                        <layout>
+                          <property name="column">1</property>
+                          <property name="row">1</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_minus_y_translate">
+                        <property name="label">–</property>
+                        <signal name="clicked" handler="pressMinus" object="text_y_translate"/>
+                        <layout>
+                          <property name="column">2</property>
+                          <property name="row">1</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_plus_y_translate">
+                        <property name="label">+</property>
+                        <signal name="clicked" handler="pressPlus" object="text_y_translate"/>
+                        <layout>
+                          <property name="column">3</property>
+                          <property name="row">1</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label_z_translate">
+                        <property name="label">Z</property>
+                        <layout>
+                          <property name="column">0</property>
+                          <property name="row">2</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkEntryBuffer" id="eb_z_translate"></object>
+                      <object class="GtkText" id="text_z_translate">
+                        <property name="buffer">eb_z_translate</property>
+                        <property name="max-length">10</property>
+                        <property name="hexpand">1</property>
+                        <layout>
+                          <property name="column">1</property>
+                          <property name="row">2</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_minus_z_translate">
+                        <property name="label">–</property>
+                        <signal name="clicked" handler="pressMinus" object="text_z_translate"/>
+                        <layout>
+                          <property name="column">2</property>
+                          <property name="row">2</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_plus_z_translate">
+                        <property name="label">+</property>
+                        <signal name="clicked" handler="pressPlus" object="text_z_translate"/>
+                        <layout>
+                          <property name="column">3</property>
+                          <property name="row">2</property>
+                        </layout>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="btn_translate">
+                    <property name="label">Translate</property>
+                    <signal name="clicked" handler="pressTranslate"/>
+                    <style>
+                      <class name="special"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox" id="vbox_rotate">
+                <property name="orientation">vertical</property>
+                <property name="spacing">5</property>
+                <style>
+                  <class name="section"/>
+                </style>
+                <child>
+                  <object class="GtkLabel" id="label_model_rotate">
+                    <property name="label">Rotate</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkGrid" id="grid_rotate">
+                    <property name="row-spacing">5</property>
+                    <property name="column-spacing">5</property>
+                    <child>
+                      <object class="GtkLabel" id="label_x_rotate">
+                        <property name="label">X</property>
+                        <layout>
+                          <property name="column">0</property>
+                          <property name="row">0</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkEntryBuffer" id="eb_x_rotate"></object>
+                      <object class="GtkText" id="text_x_rotate">
+                        <property name="buffer">eb_x_rotate</property>
+                        <property name="max-length">10</property>
+                        <property name="hexpand">1</property>
+                        <layout>
+                          <property name="column">1</property>
+                          <property name="row">0</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_minus_x_rotate">
+                        <property name="label">–</property>
+                        <signal name="clicked" handler="pressMinus" object="text_x_rotate"/>
+                        <layout>
+                          <property name="column">2</property>
+                          <property name="row">0</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_plus_x_rotate">
+                        <property name="label">+</property>
+                        <signal name="clicked" handler="pressPlus" object="text_x_rotate"/>
+                        <layout>
+                          <property name="column">3</property>
+                          <property name="row">0</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label_y_rotate">
+                        <property name="label">Y</property>
+                        <layout>
+                          <property name="column">0</property>
+                          <property name="row">1</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkEntryBuffer" id="eb_y_rotate"></object>
+                      <object class="GtkText" id="text_y_rotate">
+                        <property name="buffer">eb_y_rotate</property>
+                        <property name="max-length">10</property>
+                        <property name="hexpand">1</property>
+                        <layout>
+                          <property name="column">1</property>
+                          <property name="row">1</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_minus_y_rotate">
+                        <property name="label">–</property>
+                        <signal name="clicked" handler="pressMinus" object="text_y_rotate"/>
+                        <layout>
+                          <property name="column">2</property>
+                          <property name="row">1</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_plus_y_rotate">
+                        <property name="label">+</property>
+                        <signal name="clicked" handler="pressPlus" object="text_y_rotate"/>
+                        <layout>
+                          <property name="column">3</property>
+                          <property name="row">1</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label_z_rotate">
+                        <property name="label">Z</property>
+                        <layout>
+                          <property name="column">0</property>
+                          <property name="row">2</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkEntryBuffer" id="eb_z_rotate"></object>
+                      <object class="GtkText" id="text_z_rotate">
+                        <property name="buffer">eb_z_rotate</property>
+                        <property name="max-length">10</property>
+                        <property name="hexpand">1</property>
+                        <layout>
+                          <property name="column">1</property>
+                          <property name="row">2</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_minus_z_rotate">
+                        <property name="label">–</property>
+                        <signal name="clicked" handler="pressMinus" object="text_z_rotate"/>
+                        <layout>
+                          <property name="column">2</property>
+                          <property name="row">2</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_plus_z_rotate">
+                        <property name="label">+</property>
+                        <signal name="clicked" handler="pressPlus" object="text_z_rotate"/>
+                        <layout>
+                          <property name="column">3</property>
+                          <property name="row">2</property>
+                        </layout>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="btn_rotate">
+                    <property name="label">Rotate</property>
+                    <signal name="clicked" handler="pressRotate"/>
+                    <style>
+                      <class name="special"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox" id="vbox_scale">
+                <property name="orientation">vertical</property>
+                <property name="spacing">5</property>
+                <child>
+                  <object class="GtkLabel" id="label_model_scale">
+                    <property name="label">Scale</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkBox" id="hbox_scale">
+                    <property name="orientation">horizontal</property>
+                    <property name="spacing">5</property>
+                    <child>
+                      <object class="GtkEntryBuffer" id="eb_scale"></object>
+                      <object class="GtkText" id="text_scale">
+                        <property name="buffer">eb_scale</property>
+                        <property name="max-length">10</property>
+                        <property name="hexpand">1</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_minus_scale">
+                        <property name="label">–</property>
+                        <signal name="clicked" handler="pressMinusScale" object="eb_scale"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_plus_scale">
+                        <property name="label">+</property>
+                        <signal name="clicked" handler="pressPlusScale" object="eb_scale"/>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="btn_scale">
+                    <signal name="clicked" handler="pressScale" object="eb_scale"/>
+                    <property name="label">Scale</property>
+                    <style>
+                      <class name="special"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkOverlay" id="overlay">
+            <property name="width-request">900</property>
+            <property name="visible">1</property>
+            <property name="can_focus">0</property>
+            <child>
+              <object class="GtkDrawingArea" id="area">
+                <property name="visible">1</property>
+                <property name="can_focus">0</property>
+                <property name="content-height">646</property>
+                <property name="content-width">900</property>
+              </object>
+            </child>
+            <child type="overlay">
+              <object class="GtkBox" id="hbox_info">
+                <property name="visible">1</property>
+                <property name="halign">center</property>
+                <property name="valign">end</property>
+                <child>
+                  <object class="GtkLabel" id="label_model">
+                    <property name="label">Model: </property>
+                    <property name="width-request">300</property>
+                    <property name="xalign">0</property>
+                    <property name="margin-start">5</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label_vertices">
+                    <property name="label">Number of vertices: </property>
+                    <property name="width-request">300</property>
+                    <property name="xalign">0</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label_edges">
+                    <property name="label">Number of edges: </property>
+                    <property name="width-request">300</property>
+                    <property name="xalign">0</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child type="overlay">
+              <object class="GtkButton" id="btn_preferences">
+                <property name="visible">1</property>
+                <property name="halign">end</property>
+                <property name="valign">start</property>
+                <property name="label"> </property>
+                <signal name="clicked" handler="openPreferences"/>
+                <style>
+                  <class name="btn_settings"/>
+                  <class name="special"/>
+                </style>
+              </object>
+            </child>
+            <child type="overlay">
+              <object class="GtkButton" id="btn_screenshot">
+                <property name="visible">1</property>
+                <property name="halign">start</property>
+                <property name="valign">start</property>
+                <property name="label"> </property>
+                <signal name="clicked" handler="takeScreenshot"/>
+                <style>
+                  <class name="btn_screenshot"/>
+                  <class name="special"/>
+                </style>
+              </object>
+            </child>
+            <child type="overlay">
+              <object class="GtkButton" id="btn_record">
+                <property name="visible">1</property>
+                <property name="halign">start</property>
+                <property name="valign">start</property>
+                <property name="label"> </property>
+                <signal name="clicked" handler="takeScreencast"/>
+                <style>
+                  <class name="btn_record"/>
+                  <class name="special"/>
+                </style>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
